@@ -1,0 +1,32 @@
+<p>customer works!</p>
+<h1>Customer</h1>
+
+<h2>Edit Profile</h2>
+<form>
+    <div class="">
+        <label for="name"><b>Name : </b></label>
+        <input type="text" [(ngModel)]="name" name="name">
+    </div>
+    <div class="">
+        <label for="name"><b>Age : </b></label>
+        <input type="text" [(ngModel)]="code" name="code">
+    </div>
+    <div class="">
+        <label for="name"><b>Email : </b></label>
+        <input type="text" [(ngModel)]="email" name="email">
+    </div>
+</form>
+<form (submit)="addSkill(skill.value)">
+    <div class="">
+        <label for="skill">skill : </label>
+        <input type="text" #skill placeholder="Add your skill">
+    </div>
+</form>
+<ul>
+    <li>Code : {{code}}</li>
+    <li>Name : {{name}}</li>
+    <li>E-mail : {{email}}</li>
+    <h2>Skill</h2>
+    <li style="list-style-type: none;" *ngFor="let skill of skills; let i = index">{{i+1}} , {{skill}} 
+        <button (click)="removeSkill(skill)">X</button></li>
+</ul>
